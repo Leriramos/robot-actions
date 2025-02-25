@@ -22,16 +22,22 @@ jobs:
     steps:
     - name: Get code
       uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: 20
+
     - name: Setup Python
       uses: actions/setup-python@v5.4.0
       with:
         python-version: 3.12
-    - name: Test
+
+    - name: Install Deps
       run: |
-        node --version
-        python --version
+        python - pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Browser Init 
+      run: rfbrowser init 
     
