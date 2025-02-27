@@ -51,8 +51,9 @@ jobs:
       with:
         name: Test Report
         path: logs
-    
-firefox:
+
+
+  firefox:
 
     runs-on: ubuntu-latest
 
